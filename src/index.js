@@ -43,6 +43,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(validator());
 
+// Configuración para servir archivos estáticos
+app.use(express.static(path.join(__dirname, 'public/img')));
+
 // Global variables
 app.use((req, res, next) => {
   app.locals.message = req.flash('message');
